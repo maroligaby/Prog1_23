@@ -1,0 +1,15 @@
+C:\prog1\exe\Prog1_23\Exe03\bin\Debug\net7.0\Exe03.exe
+C:\prog1\exe\Prog1_23\Exe03\bin\Debug\net7.0\Exe03.deps.json
+C:\prog1\exe\Prog1_23\Exe03\bin\Debug\net7.0\Exe03.runtimeconfig.json
+C:\prog1\exe\Prog1_23\Exe03\bin\Debug\net7.0\Exe03.dll
+C:\prog1\exe\Prog1_23\Exe03\bin\Debug\net7.0\Exe03.pdb
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\Exe03.csproj.AssemblyReference.cache
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\Exe03.GeneratedMSBuildEditorConfig.editorconfig
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\Exe03.AssemblyInfoInputs.cache
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\Exe03.AssemblyInfo.cs
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\Exe03.csproj.CoreCompileInputs.cache
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\Exe03.dll
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\refint\Exe03.dll
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\Exe03.pdb
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\Exe03.genruntimeconfig.cache
+C:\prog1\exe\Prog1_23\Exe03\obj\Debug\net7.0\ref\Exe03.dll
