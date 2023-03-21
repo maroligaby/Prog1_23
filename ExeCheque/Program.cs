@@ -2,13 +2,13 @@
 var numeroRecebido = Console.ReadLine();
 //Console.WriteLine (numeroRecebido);
 string numeroString = Convert.ToString(numeroRecebido);
-int qtdchars = numeroString.Length;
+var qtdchars = numeroString.Length;
 Console.WriteLine (qtdchars);
 
-if (qtdchars) == 1
-    
-    for(int i = 0; i<qtdchars; i++)
-    {
+for(int i = 0; i<qtdchars; i++)
+{
+    if (qtdchars == 1)
+        
         Console.WriteLine(numeroString[i]); 
-    }
+}
 

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\prog1\\exe\\Prog1_23\\Prog1_23\\ExeCheque\\ExeCheque.csproj",
-      "projectName": "ExeCheque",
-      "projectPath": "C:\\prog1\\exe\\Prog1_23\\Prog1_23\\ExeCheque\\ExeCheque.csproj",
+      "projectUniqueName": "C:\\prog1\\exe\\Prog1_23\\Prog1_23\\NumeroExtenso\\NumeroExtenso.csproj",
+      "projectName": "NumeroExtenso",
+      "projectPath": "C:\\prog1\\exe\\Prog1_23\\Prog1_23\\NumeroExtenso\\NumeroExtenso.csproj",
       "packagesPath": "C:\\Users\\403302\\.nuget\\packages\\",
-      "outputPath": "C:\\prog1\\exe\\Prog1_23\\Prog1_23\\ExeCheque\\obj\\",
+      "outputPath": "C:\\prog1\\exe\\Prog1_23\\Prog1_23\\NumeroExtenso\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

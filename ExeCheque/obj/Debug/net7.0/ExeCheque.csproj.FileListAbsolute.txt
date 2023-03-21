@@ -13,3 +13,11 @@ C:\unoesc\2023\prog1\exe\Prog1_23\ExeCheque\obj\Debug\net7.0\refint\ExeCheque.dl
 C:\unoesc\2023\prog1\exe\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.pdb
 C:\unoesc\2023\prog1\exe\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.genruntimeconfig.cache
 C:\unoesc\2023\prog1\exe\Prog1_23\ExeCheque\obj\Debug\net7.0\ref\ExeCheque.dll
+C:\prog1\exe\Prog1_23\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.csproj.AssemblyReference.cache
+C:\prog1\exe\Prog1_23\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.GeneratedMSBuildEditorConfig.editorconfig
+C:\prog1\exe\Prog1_23\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.AssemblyInfoInputs.cache
+C:\prog1\exe\Prog1_23\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.AssemblyInfo.cs
+C:\prog1\exe\Prog1_23\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.csproj.CoreCompileInputs.cache
+C:\prog1\exe\Prog1_23\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.dll
+C:\prog1\exe\Prog1_23\Prog1_23\ExeCheque\obj\Debug\net7.0\refint\ExeCheque.dll
+C:\prog1\exe\Prog1_23\Prog1_23\ExeCheque\obj\Debug\net7.0\ExeCheque.pdb

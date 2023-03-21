@@ -1,0 +1,15 @@
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\bin\Debug\net7.0\NumeroExtenso.exe
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\bin\Debug\net7.0\NumeroExtenso.deps.json
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\bin\Debug\net7.0\NumeroExtenso.runtimeconfig.json
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\bin\Debug\net7.0\NumeroExtenso.dll
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\bin\Debug\net7.0\NumeroExtenso.pdb
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\NumeroExtenso.csproj.AssemblyReference.cache
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\NumeroExtenso.GeneratedMSBuildEditorConfig.editorconfig
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\NumeroExtenso.AssemblyInfoInputs.cache
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\NumeroExtenso.AssemblyInfo.cs
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\NumeroExtenso.csproj.CoreCompileInputs.cache
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\NumeroExtenso.dll
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\refint\NumeroExtenso.dll
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\NumeroExtenso.pdb
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\NumeroExtenso.genruntimeconfig.cache
+C:\prog1\exe\Prog1_23\Prog1_23\NumeroExtenso\obj\Debug\net7.0\ref\NumeroExtenso.dll
