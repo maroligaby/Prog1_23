@@ -32,8 +32,10 @@ switch(numero.Length)
         Centena centena = new Centena();
         retorno = centena.CentenaPorExtenso(nro);
     break;
+    case 4:
+        UnidadeMilhar unidadeMilhar = new UnidadeMilhar();
+        retorno = unidadeMilhar.UnidadeMilharPorExtenso(nro);
+    break;
     
 };
 Console.WriteLine(retorno);
-
-
