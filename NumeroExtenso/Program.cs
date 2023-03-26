@@ -36,6 +36,10 @@ switch(numero.Length)
         UnidadeMilhar unidadeMilhar = new UnidadeMilhar();
         retorno = unidadeMilhar.UnidadeMilharPorExtenso(nro);
     break;
+    case 5:
+        DezenaMilhar dezenaMilhar = new DezenaMilhar();
+        retorno = dezenaMilhar.DezenaMilharPorExtenso(nro);
+    break;
     
 };
 Console.WriteLine(retorno);
