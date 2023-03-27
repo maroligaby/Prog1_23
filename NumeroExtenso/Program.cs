@@ -40,6 +40,10 @@ switch(numero.Length)
         DezenaMilhar dezenaMilhar = new DezenaMilhar();
         retorno = dezenaMilhar.DezenaMilharPorExtenso(nro);
     break;
+    case 6:
+        CentenaMilhar centenaMilhar = new CentenaMilhar();
+        retorno = centenaMilhar.CentenaMilharPorExtenso(nro);
+    break;
     
 };
 Console.WriteLine(retorno);
