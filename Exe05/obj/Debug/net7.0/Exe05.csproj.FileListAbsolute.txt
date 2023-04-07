@@ -1,0 +1,15 @@
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\bin\Debug\net7.0\Exe05.exe
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\bin\Debug\net7.0\Exe05.deps.json
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\bin\Debug\net7.0\Exe05.runtimeconfig.json
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\bin\Debug\net7.0\Exe05.dll
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\bin\Debug\net7.0\Exe05.pdb
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\Exe05.csproj.AssemblyReference.cache
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\Exe05.GeneratedMSBuildEditorConfig.editorconfig
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\Exe05.AssemblyInfoInputs.cache
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\Exe05.AssemblyInfo.cs
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\Exe05.csproj.CoreCompileInputs.cache
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\Exe05.dll
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\refint\Exe05.dll
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\Exe05.pdb
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\Exe05.genruntimeconfig.cache
+C:\unoesc\2023\prog1\exe\Prog1_23\Exe05\obj\Debug\net7.0\ref\Exe05.dll

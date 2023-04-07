@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\Exe05\\Exe05.csproj": {}
+    "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\FluxoTiposExceptions\\FluxoTiposExceptions.csproj": {}
   },
   "projects": {
-    "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\Exe05\\Exe05.csproj": {
+    "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\FluxoTiposExceptions\\FluxoTiposExceptions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\Exe05\\Exe05.csproj",
-        "projectName": "Exe05",
-        "projectPath": "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\Exe05\\Exe05.csproj",
+        "projectUniqueName": "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\FluxoTiposExceptions\\FluxoTiposExceptions.csproj",
+        "projectName": "FluxoTiposExceptions",
+        "projectPath": "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\FluxoTiposExceptions\\FluxoTiposExceptions.csproj",
         "packagesPath": "C:\\Users\\gabym\\.nuget\\packages\\",
-        "outputPath": "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\Exe05\\obj\\",
+        "outputPath": "C:\\unoesc\\2023\\prog1\\exe\\Prog1_23\\FluxoTiposExceptions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gabym\\AppData\\Roaming\\NuGet\\NuGet.Config"
