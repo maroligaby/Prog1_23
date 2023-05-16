@@ -1,0 +1,15 @@
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\TratamentoErros.csproj.AssemblyReference.cache
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\TratamentoErros.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\TratamentoErros.AssemblyInfoInputs.cache
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\TratamentoErros.AssemblyInfo.cs
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\TratamentoErros.csproj.CoreCompileInputs.cache
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\bin\Debug\net7.0\TratamentoErros.exe
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\bin\Debug\net7.0\TratamentoErros.deps.json
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\bin\Debug\net7.0\TratamentoErros.runtimeconfig.json
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\bin\Debug\net7.0\TratamentoErros.dll
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\bin\Debug\net7.0\TratamentoErros.pdb
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\TratamentoErros.dll
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\refint\TratamentoErros.dll
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\TratamentoErros.pdb
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\TratamentoErros.genruntimeconfig.cache
+C:\Users\403302\prog1\Prog1_23\TratamentoErros\obj\Debug\net7.0\ref\TratamentoErros.dll
