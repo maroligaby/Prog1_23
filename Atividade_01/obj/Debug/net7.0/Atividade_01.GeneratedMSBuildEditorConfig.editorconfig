@@ -7,5 +7,5 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = recursividade
-build_property.ProjectDir = c:\unoesc\2023\prog1\exe\Prog1_23\recursividade\
+build_property.RootNamespace = Atividade_01
+build_property.ProjectDir = C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\

@@ -1,12 +1,15 @@
-﻿Console.WriteLine("Cálculo Fatorial Recursivo");
+﻿using System;
+
+Console.WriteLine("Cálculo Tabuada Recursivo");
 Console.WriteLine("**************************");
 Console.WriteLine();
 
 Console.WriteLine("Digite um número:");
 int numero = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Fatorial de {numero} é {Factorial(numero)}");
-Console.WriteLine($"Fibonacci de {numero} é {Fibonacci(numero)}");
-Console.WriteLine($"Tabuada de {numero} é {MultiplicarFor}");
+//Console.WriteLine($"Fatorial de {numero} é {Factorial(numero)}");
+//Console.WriteLine($"Fibonacci de {numero} é {Fibonacci(numero)}");
+//Console.WriteLine($"Tabuada de {numero} é {MultiplicarFor}");
+Console.WriteLine($"Tabuada de {numero} é {MultiplicarRecursivo}");
 
 static int Factorial(int number)
 {
@@ -55,3 +58,13 @@ static void MultiplicarFor(int n)
         Console.WriteLine($"{n} x {i} = {n*i}");
     }
 }
+
+static void MultiplicarRecursivo(int n) {
+    ImprimirTabuada(n, 1);
+}
+static void ImprimirTabuada(int n, int fator) {
+        if (fator <= 10) { // caso base
+            Console.WriteLine($"{n} X {fator} = {n * fator}");
+            ImprimirTabuada(n, fator + 1);
+        }
+    }

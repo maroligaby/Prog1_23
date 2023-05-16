@@ -1,0 +1,15 @@
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\bin\Debug\net7.0\Atividade_01.exe
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\bin\Debug\net7.0\Atividade_01.deps.json
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\bin\Debug\net7.0\Atividade_01.runtimeconfig.json
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\bin\Debug\net7.0\Atividade_01.dll
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\bin\Debug\net7.0\Atividade_01.pdb
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\Atividade_01.csproj.AssemblyReference.cache
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\Atividade_01.GeneratedMSBuildEditorConfig.editorconfig
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\Atividade_01.AssemblyInfoInputs.cache
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\Atividade_01.AssemblyInfo.cs
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\Atividade_01.csproj.CoreCompileInputs.cache
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\Atividade_01.dll
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\refint\Atividade_01.dll
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\Atividade_01.pdb
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\Atividade_01.genruntimeconfig.cache
+C:\unoesc\2023\prog1\exe\Prog1_23\Atividade_01\obj\Debug\net7.0\ref\Atividade_01.dll
