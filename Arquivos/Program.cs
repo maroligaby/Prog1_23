@@ -1,8 +1,4 @@
-﻿/*
-Programa para leitura de dados de pessoas
-e exportação de arquivos .txt
-*/
-using Arquivos.Views;
+﻿using Arquivos.Views;
 
 int option = 0;
 
@@ -14,7 +10,7 @@ do
     Console.WriteLine ("*******************************************");
     Console.WriteLine("");
     Console.WriteLine("1 - Clientes");
-     Console.WriteLine("2 - Animais");
+    Console.WriteLine("2 - Animais");
 
     option = Convert.ToInt32 ( Console.ReadLine () );
 

@@ -8,14 +8,13 @@ namespace Arquivos.Views
     {
         private ClientController clientController;
 
-         public ClientView()
-            {
-                clientController = new ClientController();
-             this.Init();
-            }   
+        public ClientView()
+        {
+            clientController = new ClientController();
+            this.Init();
+        }   
         public void Init()
         {
-        
             Console.WriteLine("***************");
             Console.WriteLine("VOCÊ ESTÁ EM CLIENTES");
             Console.WriteLine("***********");
@@ -23,7 +22,7 @@ namespace Arquivos.Views
             Console.WriteLine("1 - Inserir cliente");
             Console.WriteLine("2 - listar clientes");
             Console.WriteLine("3 - Exportar");
-            Console.WriteLine("4***************");
+            Console.WriteLine("***************");
             Console.WriteLine("");
             int option = 0;
             option = Convert.ToInt32(Console.ReadLine() );
@@ -46,13 +45,9 @@ namespace Arquivos.Views
             List<Client> listagem = 
                 clientController.List();
 
-            //usa-se i por causa de 'index'
             for (int i=0; i <listagem.Count; i++)
             {
                 Console.WriteLine( Print( listagem[i] ) );
-                //ou:
-                //var cliente = listagem[i];
-                //Console.WriteLine( Print( cliente ) );
             }
         }
 
@@ -62,9 +57,7 @@ namespace Arquivos.Views
             retorno+= $"Id: {client.Id} \n";
             retorno+= $"Nome: {client.FirstName} {client.LastName}\n";
             retorno+= "-------------------------------------------\n";
-
             return retorno;
-
         }
         private void Insert()
         {

@@ -10,8 +10,7 @@ namespace Arquivos.Controllers
         {
             return DataSet.Clients;
         }
-
-        //punlic void significa que o método não retorna nada, retorna vazio
+        
         public bool Insert(Client client)
         {
             if(client == null)
