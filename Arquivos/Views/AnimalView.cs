@@ -22,7 +22,8 @@ namespace Arquivos.Views
             Console.WriteLine("");
             Console.WriteLine("1 - Inserir animal");
             Console.WriteLine("2 - listar animais");
-            Console.WriteLine("3 - Exportar");
+            Console.WriteLine("3 - Exportar animais para txt");
+            Console.WriteLine("4 - Importar animais");
             Console.WriteLine("***************");
             Console.WriteLine("");
 
@@ -35,6 +36,14 @@ namespace Arquivos.Views
 
                 case 2 :
                     List();
+                break;
+
+                case 3 :
+                    Export();
+                break;
+
+                case 4 :
+                    Import();
                 break;
 
                 default:
@@ -82,6 +91,23 @@ namespace Arquivos.Views
                 Console.WriteLine("Animal inserido com sucesso!");
             else
                 Console.WriteLine("Falha ao inserir, verifique os dados!");
+        }
+
+        private void Export()
+        {
+            if (animalController.ExportToTextFile())
+                Console.WriteLine("Arquivo gerado com suceso!");
+            
+            else
+                Console.WriteLine("Ooops! Ocorreu uma falha na geração do arquivo.");
+        }
+        private void Import()
+        {
+            if (animalController.ImportFromTxtFile())
+                Console.WriteLine("Arquivo importado com suceso!");
+            
+            else
+                Console.WriteLine("Ooops! Ocorreu uma falha na importação do arquivo.");
         }
     }
 }

@@ -21,7 +21,8 @@ namespace Arquivos.Views
             Console.WriteLine("");
             Console.WriteLine("1 - Inserir cliente");
             Console.WriteLine("2 - listar clientes");
-            Console.WriteLine("3 - Exportar");
+            Console.WriteLine("3 - Exportar para txt");
+            Console.WriteLine("4- Importar clientes");
             Console.WriteLine("***************");
             Console.WriteLine("");
             int option = 0;
@@ -33,6 +34,12 @@ namespace Arquivos.Views
 
                 case 2 :
                     List();
+                break;
+                case 3:
+                    Export();
+                break;
+                case 4:
+                    Import();
                 break;
 
                 default:
@@ -83,5 +90,23 @@ namespace Arquivos.Views
             else
                 Console.WriteLine("Falha ao inserir, verifique os dados!");
         }
+        private void Export()
+        {
+            if(clientController.ExportToTextFile())
+                Console.WriteLine("Arquivo gerado com sucesso!");
+
+            else
+                Console.WriteLine("Ooops! Ocorreu uma falha na geração do arquivo.");
+            
+        }
+
+        private void Import()
+        {
+            if(clientController.ImportFromTxtFile())
+                Console.WriteLine("Arquivo importado com sucesso!");
+            else
+                Console.WriteLine("Ooops! Ocorreu uma falha na importação do arquivo.");
+        }
+
     }
 }
