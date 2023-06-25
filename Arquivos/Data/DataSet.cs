@@ -9,5 +9,8 @@ namespace Arquivos.Data
 
         public static List<Animal> Animals 
             = new List<Animal>();
+
+        public static List<Vet> Vets 
+            = new List<Vet>();
     }
 }

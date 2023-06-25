@@ -4,25 +4,25 @@ using Arquivos.Models;
 
 namespace Arquivos.Views
 {
-    public class ClientView
+    public class VetView
     {
-        private ClientController clientController;
+        private VetController vetController;
 
-        public ClientView()
+        public VetView()
         {
-            clientController = new ClientController();
+            vetController = new VetController();
             this.Init();
         }   
         public void Init()
         {
             Console.WriteLine("***************");
-            Console.WriteLine("VOCÊ ESTÁ EM CLIENTES");
+            Console.WriteLine("VOCÊ ESTÁ EM VETERINÁRIOS");
             Console.WriteLine("***********");
             Console.WriteLine("");
-            Console.WriteLine("1 - Inserir cliente");
-            Console.WriteLine("2 - listar clientes");
+            Console.WriteLine("1 - Inserir veterinário");
+            Console.WriteLine("2 - listar veterinários");
             Console.WriteLine("3 - Exportar para txt");
-            Console.WriteLine("4 - Importar clientes");
+            Console.WriteLine("4 - Importar veterinários");
             Console.WriteLine("***************");
             Console.WriteLine("");
             int option = 0;
@@ -49,8 +49,8 @@ namespace Arquivos.Views
 
         private void List()
         {
-            List<Client> listagem = 
-                clientController.List();
+            List<Vet> listagem = 
+                vetController.List();
 
             for (int i=0; i <listagem.Count; i++)
             {
@@ -58,41 +58,42 @@ namespace Arquivos.Views
             }
         }
 
-        private string Print(Client client)
+        private string Print(Vet vet)
         {
             string retorno = "";
-            retorno+= $"Id: {client.Id} \n";
-            retorno+= $"Nome: {client.FirstName} {client.LastName}\n";
+            retorno+= $"Id: {vet.Id} \n";
+            retorno+= $"Nome: {vet.FirstName} {vet.LastName}\n";
+            retorno+= $"CRMV: {vet.CRMV}\n";
             retorno+= "-------------------------------------------\n";
             return retorno;
         }
         private void Insert()
         {
-            Client client = new Client();
-            client.Id = clientController.GetNextId();
+            Vet vet = new Vet();
+            vet.Id = vetController.GetNextId();
             
             Console.WriteLine("Informe o primeiro nome:");
-            client.FirstName = Console.ReadLine();
+            vet.FirstName = Console.ReadLine();
             
             Console.WriteLine("Informe o sobrenome:");
-            client.LastName = Console.ReadLine();
+            vet.LastName = Console.ReadLine();
             
-            Console.WriteLine("Informe o email:");
-            client.email = Console.ReadLine();
+            Console.WriteLine("Informe o CRMV_CE:");
+            vet.CRMV = Console.ReadLine();
 
             Console.WriteLine("Informe o CPF:");
-            client.CPF = Console.ReadLine();
+            vet.CPF = Console.ReadLine();
 
-            bool retorno = clientController.Insert(client);
+            bool retorno = vetController.Insert(vet);
 
             if (retorno)
-                Console.WriteLine("Cliente inserido com sucesso!");
+                Console.WriteLine("Veterinário inserido com sucesso!");
             else
                 Console.WriteLine("Falha ao inserir, verifique os dados!");
         }
         private void Export()
         {
-            if(clientController.ExportToTextFile())
+            if(vetController.ExportToTextFile())
                 Console.WriteLine("Arquivo gerado com sucesso!");
 
             else
@@ -102,7 +103,7 @@ namespace Arquivos.Views
 
         private void Import()
         {
-            if(clientController.ImportFromTxtFile())
+            if(vetController.ImportFromTxtFile())
                 Console.WriteLine("Arquivo importado com sucesso!");
             else
                 Console.WriteLine("Ooops! Ocorreu uma falha na importação do arquivo.");
