@@ -99,6 +99,23 @@ namespace Arquivos.Controllers
             }
 
         }
+
+        public List<Animal> SearchByName(string name)
+        {
+            if (string.IsNullOrEmpty(name) || 
+                string.IsNullOrWhiteSpace(name) )
+                return null;
+
+            List<Animal> animals = new List<Animal>();
+            for (int i = 0; i<DataSet.Animals.Count; i++)
+            {
+                var a = DataSet.Animals[i];
+                if( a.Name.ToLower().Contains(name.ToLower()) )
+                    animals.Add(a);
+            }
+            return animals;
+        }
+
         public int GetNextId()
         {
             int tam = DataSet.Animals.Count;

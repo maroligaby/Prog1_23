@@ -23,6 +23,7 @@ namespace Arquivos.Views
             Console.WriteLine("2 - listar veterinários");
             Console.WriteLine("3 - Exportar para txt");
             Console.WriteLine("4 - Importar veterinários");
+            Console.WriteLine("5 - Pesquisar veterinários");
             Console.WriteLine("***************");
             Console.WriteLine("");
             int option = 0;
@@ -40,6 +41,9 @@ namespace Arquivos.Views
                 break;
                 case 4:
                     Import();
+                break;
+                case 5:
+                    SearchByName();
                 break;
 
                 default:
@@ -108,6 +112,19 @@ namespace Arquivos.Views
             else
                 Console.WriteLine("Ooops! Ocorreu uma falha na importação do arquivo.");
         }
+
+         private void SearchByName()
+        {
+            Console.WriteLine ("Pesquisar veterinário pelo nome.");
+            Console.WriteLine ("Digite aqui o nome: ");
+            string name = Console.ReadLine();
+
+            foreach( Vet v in vetController.SearchByName(name))
+            {
+                Console.WriteLine(v.ToString());
+            }
+        }
+
 
     }
 }

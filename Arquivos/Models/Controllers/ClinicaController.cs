@@ -2,35 +2,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
 
-namespace Arquivos.Controllers
+namespace Arquivos.Models.Controllers
 {
-    public class VetController
+    public class ClinicaController
     {
         private string directoryName = "ReportFiles";
-        private string fileName = "Vets.Txt";
+        private string fileName = "Clinicas.txt";
 
-        public List<Vet> List()
+        public List<Clinica> List()
         {
-            return DataSet.Vets;
+            return DataSet.Clinicas;
         }
         
-        public bool Insert(Vet vet)
+        public bool Insert(Clinica clinica)
         {
-            if(vet == null)
+            if(clinica == null)
                 return false;
 
-            if (vet.Id <= 0)
+            if (clinica.Id <= 0)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(vet.FirstName))
+            if (string.IsNullOrWhiteSpace(clinica.Name))
                 return false;
 
 
-            DataSet.Vets.Add(vet);
+            DataSet.Clinicas.Add(clinica);
             return true;
         }
 
@@ -40,9 +39,9 @@ namespace Arquivos.Controllers
                 Directory.CreateDirectory(directoryName);
             
             string fileContent = string.Empty;
-            foreach(Vet v in DataSet.Vets)
+            foreach(Clinica c in DataSet.Clinicas)
             {
-                fileContent += $"{v.Id};{v.FirstName};{v.LastName};{v.CPF};{v.CRMV}";
+                fileContent += $"{c.Id};{c.Name};{c.CNPJ};{c.Endereco};{c.Telefone}";
                 fileContent +="\n";
             }
         
@@ -77,15 +76,15 @@ namespace Arquivos.Controllers
                 line = sr.ReadLine();
                 while(line != null)
                 {
-                    Vet vet = new Vet();
-                    string[] vetData = line.Split(';');
-                    vet.Id = Convert.ToInt32(vetData[0]);
-                    vet.FirstName = vetData[1];
-                    vet.LastName = vetData[2];
-                    vet.CPF = vetData[3];
-                    vet.CRMV = vetData[4];
+                    Client client = new Client();
+                    string[] clientData = line.Split(';');
+                    client.Id = Convert.ToInt32(clientData[0]);
+                    client.FirstName = clientData[1];
+                    client.LastName = clientData[2];
+                    client.CPF = clientData[3];
+                    client.email=clientData[4];
 
-                    DataSet.Vets.Add(vet);
+                    DataSet.Clients.Add(client);
 
                     line = sr.ReadLine();
                 }
@@ -101,29 +100,31 @@ namespace Arquivos.Controllers
             }
 
         }
-        public List<Vet> SearchByName(string name)
+
+        public List<Client> SearchByName(string name)
         {
             if (string.IsNullOrEmpty(name) || 
                 string.IsNullOrWhiteSpace(name) )
                 return null;
 
-            List<Vet> vets = new List<Vet>();
-            for (int i = 0; i<DataSet.Vets.Count; i++)
+            List<Client> clients = new List<Client>();
+            for (int i = 0; i<DataSet.Clients.Count; i++)
             {
-                var v = DataSet.Vets[i];
-                if( v.FullName.ToLower().Contains(name.ToLower()) )
-                    vets.Add(v);
+                var c = DataSet.Clients[i];
+                if( c.FullName.ToLower().Contains(name.ToLower()) )
+                    clients.Add(c);
             }
-            return vets;
+            return clients;
         }
+    
         public int GetNextId()
         {
-            int tam = DataSet.Vets.Count;
+            int tam = DataSet.Clients.Count;
 
             Console.WriteLine("Quantidade: " + tam);
          
             if (tam > 0)
-                return DataSet.Vets[tam - 1].Id + 1;
+                return DataSet.Clients[tam - 1].Id + 1;
             else
                 return 1;
         }

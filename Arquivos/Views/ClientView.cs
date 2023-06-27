@@ -122,7 +122,6 @@ namespace Arquivos.Views
             {
                 Console.WriteLine(c.ToString());
             }
-
         }
 
     }

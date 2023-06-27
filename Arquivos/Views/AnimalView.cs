@@ -24,6 +24,7 @@ namespace Arquivos.Views
             Console.WriteLine("2 - listar animais");
             Console.WriteLine("3 - Exportar animais para txt");
             Console.WriteLine("4 - Importar animais");
+            Console.WriteLine("5 - Pesquisar animais");
             Console.WriteLine("***************");
             Console.WriteLine("");
 
@@ -44,6 +45,10 @@ namespace Arquivos.Views
 
                 case 4 :
                     Import();
+                break;
+
+                case 5 :
+                    SearchByName();
                 break;
 
                 default:
@@ -108,6 +113,19 @@ namespace Arquivos.Views
             
             else
                 Console.WriteLine("Ooops! Ocorreu uma falha na importação do arquivo.");
+        }
+
+        private void SearchByName()
+        {
+            Console.WriteLine ("Pesquisar animal pelo nome.");
+            Console.WriteLine ("Digite aqui o nome: ");
+            string name = Console.ReadLine();
+
+            foreach( Animal a in animalController.SearchByName(name))
+            {
+                Console.WriteLine(a.ToString());
+            }
+
         }
     }
 }

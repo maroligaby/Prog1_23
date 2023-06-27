@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
 
@@ -11,7 +6,7 @@ namespace Arquivos.Controllers
     public class ClientController
     {
         private string directoryName = "ReportFiles";
-        private string fileName = "Clients.Txt";
+        private string fileName = "Clients.txt";
 
         public List<Client> List()
         {

@@ -12,12 +12,9 @@ namespace Arquivos.Models
 
         }
 
-        public Animal (int id,string? name, string? raca, string? nascimento)
+        public override string ToString()
         {
-            id = Id;
-            name = Name;
-            raca = Raca;
-            nascimento = Nascimento;
+            return $"Id: {this.Id}; Name: {this.Name}; Raça: {this.Raca}";
         }
     }
 }

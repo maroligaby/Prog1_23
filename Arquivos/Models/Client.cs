@@ -1,14 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Arquivos.Models
 {
     public class Client
     {
         public int Id{ get;set;}        
-        public string? FirstName {get;set;}
+        public string? FirstName { get; set; }
         public string?LastName {get;set;}
         public string? CPF { get;set;}
         public string? email { get;set;}
@@ -22,7 +17,7 @@ namespace Arquivos.Models
                     string? lastName, 
                     string? cPF, 
                     string? email)
-        {
+        {            
             Id = id;
             FirstName = firstName;
             LastName = lastName;
@@ -34,7 +29,7 @@ namespace Arquivos.Models
 
         public override string ToString()
         {
-            return $"Id: {this.Id}; Name: {this.FullName}";
+            return $"Id: {this.Id}; Name: {this.FullName}; Email: {this.email}";
         }
     }
 }
