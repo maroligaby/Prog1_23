@@ -1,4 +1,7 @@
 ﻿using Arquivos.Views;
+using Arquivos.Utils;
+
+Bootstrapper.ChargeClients();
 
 int option = 0;
 

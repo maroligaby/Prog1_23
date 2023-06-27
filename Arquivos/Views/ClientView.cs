@@ -23,6 +23,7 @@ namespace Arquivos.Views
             Console.WriteLine("2 - listar clientes");
             Console.WriteLine("3 - Exportar para txt");
             Console.WriteLine("4 - Importar clientes");
+            Console.WriteLine("5 - Pesquisar clientes");
             Console.WriteLine("***************");
             Console.WriteLine("");
             int option = 0;
@@ -40,6 +41,9 @@ namespace Arquivos.Views
                 break;
                 case 4:
                     Import();
+                break;
+                case 5:
+                    SearchByName();
                 break;
 
                 default:
@@ -106,6 +110,19 @@ namespace Arquivos.Views
                 Console.WriteLine("Arquivo importado com sucesso!");
             else
                 Console.WriteLine("Ooops! Ocorreu uma falha na importação do arquivo.");
+        }
+
+        private void SearchByName()
+        {
+            Console.WriteLine ("Pesquisar cliente pelo nome.");
+            Console.WriteLine ("Digite aqui o nome: ");
+            string name = Console.ReadLine();
+
+            foreach( Client c in clientController.SearchByName(name))
+            {
+                Console.WriteLine(c.ToString());
+            }
+
         }
 
     }

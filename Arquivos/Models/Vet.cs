@@ -17,17 +17,5 @@ namespace Arquivos.Models
         {
             
         }
-        public Vet(int id, 
-                    string? firstName, 
-                    string? lastName, 
-                    string? cPF, 
-                    string? crmv)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            CPF = cPF;
-            CRMV = crmv;
-        }
     }
 }

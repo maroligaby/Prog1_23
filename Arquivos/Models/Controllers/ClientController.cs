@@ -101,6 +101,22 @@ namespace Arquivos.Controllers
             }
 
         }
+
+        public List<Client> SearchByName(string name)
+        {
+            if (string.IsNullOrEmpty(name) || 
+                string.IsNullOrWhiteSpace(name) )
+                return null;
+
+            List<Client> clients = new List<Client>();
+            for (int i = 0; i<DataSet.Clients.Count; i++)
+            {
+                var c = DataSet.Clients[i];
+                if( c.FullName.ToLower().Contains(name.ToLower()) )
+                    clients.Add(c);
+            }
+            return clients;
+        }
     
         public int GetNextId()
         {
