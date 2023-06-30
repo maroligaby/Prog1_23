@@ -8,29 +8,28 @@ using Arquivos.Models;
 
 namespace Arquivos.Controllers
 {
-    public class VetController
+    public class AnimalController
     {
+
         private string directoryName = "ReportFiles";
-        private string fileName = "Vets.Txt";
-
-        public List<Vet> List()
+        private string fileName = "Animals.txt";
+        public List<Animal> List()
         {
-            return DataSet.Vets;
+            return DataSet.Animals;
         }
-        
-        public bool Insert(Vet vet)
+
+        public bool Insert(Animal animal)
         {
-            if(vet == null)
+            if(animal==null)
                 return false;
 
-            if (vet.Id <= 0)
+            if(animal.Id <= 0)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(vet.FirstName))
+            if(string.IsNullOrWhiteSpace(animal.Name))
                 return false;
 
-
-            DataSet.Vets.Add(vet);
+            DataSet.Animals.Add(animal);
             return true;
         }
 
@@ -40,9 +39,9 @@ namespace Arquivos.Controllers
                 Directory.CreateDirectory(directoryName);
             
             string fileContent = string.Empty;
-            foreach(Vet v in DataSet.Vets)
+            foreach(Animal a in DataSet.Animals)
             {
-                fileContent += $"{v.Id};{v.FirstName};{v.LastName};{v.CPF};{v.CRMV}";
+                fileContent += $"{a.Id};{a.Name};{a.Raca};{a.Nascimento}";
                 fileContent +="\n";
             }
         
@@ -77,15 +76,14 @@ namespace Arquivos.Controllers
                 line = sr.ReadLine();
                 while(line != null)
                 {
-                    Vet vet = new Vet();
-                    string[] vetData = line.Split(';');
-                    vet.Id = Convert.ToInt32(vetData[0]);
-                    vet.FirstName = vetData[1];
-                    vet.LastName = vetData[2];
-                    vet.CPF = vetData[3];
-                    vet.CRMV = vetData[4];
+                    Animal animal = new Animal();
+                    string[] animalData = line.Split(';');
+                    animal.Id = Convert.ToInt32(animalData[0]);
+                    animal.Name = animalData[1];
+                    animal.Raca = animalData[2];
+                    animal.Nascimento = animalData[3];
 
-                    DataSet.Vets.Add(vet);
+                    DataSet.Animals.Add(animal);
 
                     line = sr.ReadLine();
                 }
@@ -101,31 +99,49 @@ namespace Arquivos.Controllers
             }
 
         }
-        public List<Vet> SearchByName(string name)
+
+        public List<Animal> SearchByName(string name)
         {
             if (string.IsNullOrEmpty(name) || 
                 string.IsNullOrWhiteSpace(name) )
                 return null;
 
-            List<Vet> vets = new List<Vet>();
-            for (int i = 0; i<DataSet.Vets.Count; i++)
+            List<Animal> animals = new List<Animal>();
+            for (int i = 0; i<DataSet.Animals.Count; i++)
             {
-                var v = DataSet.Vets[i];
-                if( v.FullName.ToLower().Contains(name.ToLower()) )
-                    vets.Add(v);
+                var a = DataSet.Animals[i];
+                if( a.Name.ToLower().Contains(name.ToLower()) )
+                    animals.Add(a);
             }
-            return vets;
+            return animals;
         }
+
+        public List<Animal> SearchByNascimento(string Nascimento)
+        {
+            if (string.IsNullOrEmpty(Nascimento) || 
+                string.IsNullOrWhiteSpace(Nascimento) )
+                return null;
+
+            List<Animal> animals = new List<Animal>();
+            for (int i = 0; i<DataSet.Animals.Count; i++)
+            {
+                var a = DataSet.Animals[i];
+                if( a.Nascimento.ToLower().Contains(Nascimento.ToLower()) )
+                    animals.Add(a);
+            }
+            return animals;
+        }
+
         public int GetNextId()
         {
-            int tam = DataSet.Vets.Count;
+            int tam = DataSet.Animals.Count;
 
             Console.WriteLine("Quantidade: " + tam);
          
             if (tam > 0)
-                return DataSet.Vets[tam - 1].Id + 1;
+                return DataSet.Animals[tam - 1].Id + 1;
             else
                 return 1;
         }
-    }   
+    }
 }

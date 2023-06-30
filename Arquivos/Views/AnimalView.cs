@@ -16,18 +16,18 @@ namespace Arquivos.Views
 
         public void Init()
         {
-            Console.WriteLine("***************");
-            Console.WriteLine("VOCÊ ESTÁ EM ANIMAIS");
-            Console.WriteLine("***********");
+            Console.WriteLine("*****************");
+            Console.WriteLine("ANIMAIS");
+            Console.WriteLine("*****************");
             Console.WriteLine("");
             Console.WriteLine("1 - Inserir animal");
             Console.WriteLine("2 - listar animais");
-            Console.WriteLine("3 - Exportar animais para txt");
+            Console.WriteLine("3 - Exportar para txt");
             Console.WriteLine("4 - Importar animais");
             Console.WriteLine("5 - Pesquisar animais");
-            Console.WriteLine("***************");
+            Console.WriteLine("0 - Voltar");
+            Console.WriteLine("*****************");
             Console.WriteLine("");
-
             int option = 0;
             option = Convert.ToInt32(Console.ReadLine() );
             switch(option){
@@ -38,20 +38,31 @@ namespace Arquivos.Views
                 case 2 :
                     List();
                 break;
-
-                case 3 :
+                case 3:
                     Export();
                 break;
-
-                case 4 :
+                case 4:
                     Import();
                 break;
-
-                case 5 :
-                    SearchByName();
+                case 5:
+                    Console.WriteLine("PESQUISA");
+                    Console.WriteLine("***************");
+                    Console.WriteLine("1 - Pesquisar animal por nome.");
+                    Console.WriteLine("2 - Pesquisar animal por Data de Nascimento.");
+                    int tipoPesquisa = Convert.ToInt32(Console.ReadLine() );
+                    if(tipoPesquisa ==1)
+                        SearchByName();
+                    if(tipoPesquisa == 2)
+                        SearchByNascimento();
+                    if(tipoPesquisa != 1 && tipoPesquisa !=2)
+                        Console.WriteLine("\nOpção inválida.\n");
+                break;
+                case 0:
                 break;
 
                 default:
+                    Console.WriteLine("\nOOps, opção inválida!\n");
+                    this.Init();
                 break;
             }
         }
@@ -69,9 +80,10 @@ namespace Arquivos.Views
         private string Print (Animal animal)
         {
             string retorno = "";
-            retorno += $"Id: {animal.Id} \n";
+            retorno+= $"Id: {animal.Id} \n";
             retorno+= $"Nome: {animal.Name} \n";
-            retorno+=$"Raça: {animal.Raca} \n";
+            retorno+= $"Raça: {animal.Raca} \n";
+            retorno+= $"Nascimento: {animal.Nascimento}\n";
             retorno+= "-------------------------------------------\n";
             return retorno;
         }
@@ -121,11 +133,28 @@ namespace Arquivos.Views
             Console.WriteLine ("Digite aqui o nome: ");
             string name = Console.ReadLine();
 
+            int contador = 0;
             foreach( Animal a in animalController.SearchByName(name))
             {
                 Console.WriteLine(a.ToString());
+                contador ++;
             }
+            if(contador == 0)
+                Console.WriteLine("\nDado não encontrado!\n");  
+        }
+        private void SearchByNascimento()
+        {
+            Console.WriteLine ("Digite a data de Nacimento do animal aqui.");
+            string Nascimento = Console.ReadLine();
 
+            int contador = 0;
+            foreach( Animal a in animalController.SearchByNascimento(Nascimento))
+            {
+                Console.WriteLine(a.ToString());
+                contador ++;
+            }
+            if(contador == 0)
+                Console.WriteLine("\nDado não encontrado!\n");        
         }
     }
 }

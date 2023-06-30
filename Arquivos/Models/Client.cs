@@ -29,7 +29,7 @@ namespace Arquivos.Models
 
         public override string ToString()
         {
-            return $"Id: {this.Id}; Name: {this.FullName}; Email: {this.email}";
+            return $"Id: {this.Id}; Name: {this.FullName}; CPF: {this.CPF}; Email: {this.email};";
         }
     }
 }

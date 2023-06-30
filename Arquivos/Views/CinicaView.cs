@@ -4,26 +4,26 @@ using Arquivos.Models;
 
 namespace Arquivos.Views
 {
-    public class ClientView
+    public class ClinicaView
     {
-        private ClientController clientController;
+        private ClinicaController clinicaController;
 
-        public ClientView()
+        public ClinicaView()
         {
-            clientController = new ClientController();
+            clinicaController = new ClinicaController();
             this.Init();
         }   
         public void Init()
         {
             Console.WriteLine("***************");
-            Console.WriteLine("CLIENTES");
+            Console.WriteLine("CLINICAS");
             Console.WriteLine("***************");
             Console.WriteLine("");
-            Console.WriteLine("1 - Inserir cliente");
-            Console.WriteLine("2 - listar clientes");
+            Console.WriteLine("1 - Inserir clinica");
+            Console.WriteLine("2 - listar clinicas");
             Console.WriteLine("3 - Exportar para txt");
-            Console.WriteLine("4 - Importar clientes");
-            Console.WriteLine("5 - Pesquisar clientes");
+            Console.WriteLine("4 - Importar clinicas");
+            Console.WriteLine("5 - Pesquisar clinicas");
              Console.WriteLine("0 - Voltar");
             Console.WriteLine("***************");
             Console.WriteLine("");
@@ -46,13 +46,13 @@ namespace Arquivos.Views
                 case 5:
                     Console.WriteLine("PESQUISA");
                     Console.WriteLine("***************");
-                    Console.WriteLine("1 - Pesquisar cliente por nome.");
-                    Console.WriteLine("2 - Pesquisar cliente por CPF.");
+                    Console.WriteLine("1 - Pesquisar clínica por nome.");
+                    Console.WriteLine("2 - Pesquisar Clínica por endereço.");
                     int tipoPesquisa = Convert.ToInt32(Console.ReadLine() );
                     if(tipoPesquisa ==1)
                         SearchByName();
                     if(tipoPesquisa == 2)
-                        SearchByCPF();
+                        SearchByEndereco();
                     if(tipoPesquisa != 1 && tipoPesquisa !=2)
                         Console.WriteLine("\nOpção inválida.\n");
                 break;
@@ -68,8 +68,8 @@ namespace Arquivos.Views
         }
         private void List()
         {
-            List<Client> listagem = 
-                clientController.List();
+            List<Clinica> listagem = 
+                clinicaController.List();
 
             for (int i=0; i <listagem.Count; i++)
             {
@@ -77,43 +77,44 @@ namespace Arquivos.Views
             }
         }
 
-        private string Print(Client client)
+        private string Print(Clinica clinica)
         {
             string retorno = "";
-            retorno+= $"Id: {client.Id} \n";
-            retorno+= $"Nome: {client.FullName}\n";
-            retorno+= $"CPF: {client.CPF}\n";
-            retorno+= $"E-mail: {client.email}\n";
+            retorno+= $"Id: {clinica.Id} \n";
+            retorno+= $"Nome: {clinica.Name}\n";
+	        retorno +=$"Endereço: {clinica.Endereco}\n";
+	        retorno +=$"Telefone: {clinica.Telefone}\n";
+            retorno +=$"CNPJ: {clinica.CNPJ}\n";
             retorno+= "-------------------------------------------\n";
             return retorno;
         }
         private void Insert()
         {
-            Client client = new Client();
-            client.Id = clientController.GetNextId();
+            Clinica clinica = new Clinica();
+            clinica.Id = clinicaController.GetNextId();
             
-            Console.WriteLine("Informe o primeiro nome:");
-            client.FirstName = Console.ReadLine();
+            Console.WriteLine("Informe nome da clínica:");
+            clinica.Name = Console.ReadLine();
             
-            Console.WriteLine("Informe o sobrenome:");
-            client.LastName = Console.ReadLine();
+            Console.WriteLine("Informe o CNPJ da clínica:");
+            clinica.CNPJ = Console.ReadLine();
             
-            Console.WriteLine("Informe o email:");
-            client.email = Console.ReadLine();
+            Console.WriteLine("Informe o telefone:");
+            clinica.Telefone = Console.ReadLine();
 
-            Console.WriteLine("Informe o CPF:");
-            client.CPF = Console.ReadLine();
+            Console.WriteLine("Informe o endereço:");
+            clinica.Endereco = Console.ReadLine();
 
-            bool retorno = clientController.Insert(client);
+            bool retorno = clinicaController.Insert(clinica);
 
             if (retorno)
-                Console.WriteLine("Cliente inserido com sucesso!");
+                Console.WriteLine("Clinica inserida com sucesso!");
             else
                 Console.WriteLine("Falha ao inserir, verifique os dados!");
         }
         private void Export()
         {
-            if(clientController.ExportToTextFile())
+            if(clinicaController.ExportToTextFile())
                 Console.WriteLine("Arquivo gerado com sucesso!");
 
             else
@@ -123,7 +124,7 @@ namespace Arquivos.Views
 
         private void Import()
         {
-            if(clientController.ImportFromTxtFile())
+            if(clinicaController.ImportFromTxtFile())
                 Console.WriteLine("Arquivo importado com sucesso!");
             else
                 Console.WriteLine("Ooops! Ocorreu uma falha na importação do arquivo.");
@@ -131,25 +132,26 @@ namespace Arquivos.Views
 
         private void SearchByName()
         {
-            Console.WriteLine ("Digite o nome do cliente aqui.");
+            Console.WriteLine ("Pesquisar clinica pelo nome.");
+            Console.WriteLine ("Digite aqui o nome: ");
             string name = Console.ReadLine();
 
             int contador = 0;
-            foreach( Client c in clientController.SearchByName(name))
+            foreach( Clinica c in clinicaController.SearchByName(name))
             {
                 Console.WriteLine(c.ToString());
-                contador ++;
+                contador++;
             }
             if(contador == 0)
-                Console.WriteLine("\nDado não encontrado!\n");        
+                Console.WriteLine("\nDado não encontrado!\n"); 
         }
-        private void SearchByCPF()
+         private void SearchByEndereco()
         {
-            Console.WriteLine ("Digite o CPF do cliente aqui.");
-            string CPF = Console.ReadLine();
+            Console.WriteLine ("Digite o Endereço da clínica aqui.");
+            string Endereco = Console.ReadLine();
 
             int contador = 0;
-            foreach( Client c in clientController.SearchByCPF(CPF))
+            foreach( Clinica c in clinicaController.SearchByEndereco(Endereco))
             {
                 Console.WriteLine(c.ToString());
                 contador ++;
@@ -157,5 +159,6 @@ namespace Arquivos.Views
             if(contador == 0)
                 Console.WriteLine("\nDado não encontrado!\n");        
         }
+
     }
 }

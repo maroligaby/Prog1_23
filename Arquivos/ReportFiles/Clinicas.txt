@@ -1,0 +1,2 @@
+1;Cuidado Animal;09.567.123/0001-32;Rua x, São Paulo - SP, Brasil;(49) 9 9845-1237
+2;happy animal;12.456.789/0001-34;Nova York - United States;(49)991234567

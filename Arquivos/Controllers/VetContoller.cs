@@ -1,31 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
 
 namespace Arquivos.Controllers
 {
-    public class ClientController
+    public class VetController
     {
         private string directoryName = "ReportFiles";
-        private string fileName = "Clients.txt";
+        private string fileName = "Vets.txt";
 
-        public List<Client> List()
+        public List<Vet> List()
         {
-            return DataSet.Clients;
+            return DataSet.Vets;
         }
         
-        public bool Insert(Client client)
+        public bool Insert(Vet vet)
         {
-            if(client == null)
+            if(vet == null)
                 return false;
 
-            if (client.Id <= 0)
+            if (vet.Id <= 0)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(client.FirstName))
+            if (string.IsNullOrWhiteSpace(vet.FirstName))
                 return false;
 
 
-            DataSet.Clients.Add(client);
+            DataSet.Vets.Add(vet);
             return true;
         }
 
@@ -35,9 +40,9 @@ namespace Arquivos.Controllers
                 Directory.CreateDirectory(directoryName);
             
             string fileContent = string.Empty;
-            foreach(Client c in DataSet.Clients)
+            foreach(Vet v in DataSet.Vets)
             {
-                fileContent += $"{c.Id};{c.FirstName};{c.LastName};{c.CPF};{c.email}";
+                fileContent += $"{v.Id};{v.FirstName};{v.LastName};{v.CPF};{v.CRMV}";
                 fileContent +="\n";
             }
         
@@ -72,15 +77,15 @@ namespace Arquivos.Controllers
                 line = sr.ReadLine();
                 while(line != null)
                 {
-                    Client client = new Client();
-                    string[] clientData = line.Split(';');
-                    client.Id = Convert.ToInt32(clientData[0]);
-                    client.FirstName = clientData[1];
-                    client.LastName = clientData[2];
-                    client.CPF = clientData[3];
-                    client.email=clientData[4];
+                    Vet vet = new Vet();
+                    string[] vetData = line.Split(';');
+                    vet.Id = Convert.ToInt32(vetData[0]);
+                    vet.FirstName = vetData[1];
+                    vet.LastName = vetData[2];
+                    vet.CPF = vetData[3];
+                    vet.CRMV = vetData[4];
 
-                    DataSet.Clients.Add(client);
+                    DataSet.Vets.Add(vet);
 
                     line = sr.ReadLine();
                 }
@@ -96,31 +101,45 @@ namespace Arquivos.Controllers
             }
 
         }
-
-        public List<Client> SearchByName(string name)
+        public List<Vet> SearchByName(string name)
         {
             if (string.IsNullOrEmpty(name) || 
                 string.IsNullOrWhiteSpace(name) )
                 return null;
 
-            List<Client> clients = new List<Client>();
-            for (int i = 0; i<DataSet.Clients.Count; i++)
+            List<Vet> vets = new List<Vet>();
+            for (int i = 0; i<DataSet.Vets.Count; i++)
             {
-                var c = DataSet.Clients[i];
-                if( c.FullName.ToLower().Contains(name.ToLower()) )
-                    clients.Add(c);
+                var v = DataSet.Vets[i];
+                if( v.FullName.ToLower().Contains(name.ToLower()) )
+                    vets.Add(v);
             }
-            return clients;
+            return vets;
         }
-    
+
+        public List<Vet> SearchByCRMV(string CRMV)
+        {
+            if (string.IsNullOrEmpty(CRMV) || 
+                string.IsNullOrWhiteSpace(CRMV) )
+                return null;
+
+            List<Vet> vets = new List<Vet>();
+            for (int i = 0; i<DataSet.Vets.Count; i++)
+            {
+                var v = DataSet.Vets[i];
+                if( v.CRMV.ToLower().Contains(CRMV.ToLower()) )
+                    vets.Add(v);
+            }
+            return vets;
+        }
         public int GetNextId()
         {
-            int tam = DataSet.Clients.Count;
+            int tam = DataSet.Vets.Count;
 
             Console.WriteLine("Quantidade: " + tam);
          
             if (tam > 0)
-                return DataSet.Clients[tam - 1].Id + 1;
+                return DataSet.Vets[tam - 1].Id + 1;
             else
                 return 1;
         }

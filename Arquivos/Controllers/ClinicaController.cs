@@ -2,34 +2,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
 
 namespace Arquivos.Controllers
 {
-    public class AnimalController
+    public class ClinicaController
     {
-
         private string directoryName = "ReportFiles";
-        private string fileName = "Animals.Txt";
-        public List<Animal> List()
+        private string fileName = "Clinicas.txt";
+
+        public List<Clinica> List()
         {
-            return DataSet.Animals;
+            return DataSet.Clinicas;
         }
-
-        public bool Insert(Animal animal)
+        
+        public bool Insert(Clinica clinica)
         {
-            if(animal==null)
+            if(clinica == null)
                 return false;
 
-            if(animal.Id <= 0)
+            if (clinica.Id <= 0)
                 return false;
 
-            if(string.IsNullOrWhiteSpace(animal.Name))
+            if (string.IsNullOrWhiteSpace(clinica.Name))
                 return false;
 
-            DataSet.Animals.Add(animal);
+
+            DataSet.Clinicas.Add(clinica);
             return true;
         }
 
@@ -39,9 +39,9 @@ namespace Arquivos.Controllers
                 Directory.CreateDirectory(directoryName);
             
             string fileContent = string.Empty;
-            foreach(Animal a in DataSet.Animals)
+            foreach(Clinica c in DataSet.Clinicas)
             {
-                fileContent += $"{a.Id};{a.Name};{a.Raca};{a.Nascimento}";
+                fileContent += $"{c.Id};{c.Name};{c.CNPJ};{c.Endereco};{c.Telefone}";
                 fileContent +="\n";
             }
         
@@ -76,14 +76,15 @@ namespace Arquivos.Controllers
                 line = sr.ReadLine();
                 while(line != null)
                 {
-                    Animal animal = new Animal();
-                    string[] animalData = line.Split(';');
-                    animal.Id = Convert.ToInt32(animalData[0]);
-                    animal.Name = animalData[1];
-                    animal.Raca = animalData[2];
-                    animal.Nascimento = animalData[3];
+                    Clinica clinica = new Clinica();
+                    string[] clinicaData = line.Split(';');
+                    clinica.Id = Convert.ToInt32(clinicaData[0]);
+                    clinica.Name = clinicaData[1];
+                    clinica.CNPJ = clinicaData[2];
+                    clinica.Endereco = clinicaData[3];
+                    clinica.Telefone = clinicaData[4];
 
-                    DataSet.Animals.Add(animal);
+                    DataSet.Clinicas.Add(clinica);
 
                     line = sr.ReadLine();
                 }
@@ -100,34 +101,48 @@ namespace Arquivos.Controllers
 
         }
 
-        public List<Animal> SearchByName(string name)
+        public List<Clinica> SearchByName(string name)
         {
             if (string.IsNullOrEmpty(name) || 
                 string.IsNullOrWhiteSpace(name) )
                 return null;
 
-            List<Animal> animals = new List<Animal>();
-            for (int i = 0; i<DataSet.Animals.Count; i++)
+            List<Clinica> clinicas = new List<Clinica>();
+            for (int i = 0; i<DataSet.Clinicas.Count; i++)
             {
-                var a = DataSet.Animals[i];
-                if( a.Name.ToLower().Contains(name.ToLower()) )
-                    animals.Add(a);
+                var c = DataSet.Clinicas[i];
+                if( c.Name.ToLower().Contains(name.ToLower()) )
+                    clinicas.Add(c);
             }
-            return animals;
+            return clinicas;
         }
 
+        public List<Clinica> SearchByEndereco(string Endereco)
+        {
+            if (string.IsNullOrEmpty(Endereco) || 
+                string.IsNullOrWhiteSpace(Endereco) )
+                return null;
+
+            List<Clinica> clinicas = new List<Clinica>();
+            for (int i = 0; i<DataSet.Clinicas.Count; i++)
+            {
+                var c = DataSet.Clinicas[i];
+                if( c.Endereco.ToLower().Contains(Endereco.ToLower()) )
+                    clinicas.Add(c);
+            }
+            return clinicas;
+        }
+    
         public int GetNextId()
         {
-            int tam = DataSet.Animals.Count;
+            int tam = DataSet.Clinicas.Count;
 
             Console.WriteLine("Quantidade: " + tam);
          
             if (tam > 0)
-                return DataSet.Animals[tam - 1].Id + 1;
+                return DataSet.Clinicas[tam - 1].Id + 1;
             else
                 return 1;
         }
-
-
-    }
+    }   
 }

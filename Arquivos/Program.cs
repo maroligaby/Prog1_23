@@ -2,6 +2,9 @@
 using Arquivos.Utils;
 
 Bootstrapper.ChargeClients();
+Bootstrapper.ChargeAnimals();
+Bootstrapper.ChargeVets();
+Bootstrapper.ChargeClinicas();
 
 int option = 0;
 
@@ -15,6 +18,8 @@ do
     Console.WriteLine("1 - Clientes");
     Console.WriteLine("2 - Animais");
     Console.WriteLine("3 - Veterinários");
+    Console.WriteLine("4 - Clínicas");
+    Console.WriteLine("0 - Sair do programa");
 
     option = Convert.ToInt32 ( Console.ReadLine () );
 
@@ -33,6 +38,17 @@ do
         case 3 :
             Console.WriteLine ("OPÇÃO VETERINÁRIOS");
             VetView vetView = new VetView();
+        break;
+
+        case 4 :
+            Console.WriteLine ("OPÇÃO CLÍNICAS");
+            ClinicaView clinicaView = new ClinicaView();
+        break;
+        case 0 :
+        break;
+
+        default:
+            Console.WriteLine("OOps, opção inválida!");
         break;
     }
 

@@ -20,7 +20,7 @@ namespace Arquivos.Models
 
         public override string ToString()
         {
-            return $"Id: {this.Id}; Name: {this.Name}; Telefone: {this.Telefone}";
+            return $"Id: {this.Id}; Name: {this.Name}; Endereço: {this.Endereco}; CNPJ:{this.CNPJ}; Telefone: {this.Telefone}";
         }
 
     }

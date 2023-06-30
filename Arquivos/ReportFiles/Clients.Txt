@@ -1,3 +1,3 @@
-1;gabrielly;Maroli;045.465.465-46;gabymaroli@hotmail.com
-2;Eduardo;Blank;045.465.465-09;eduardoblank@unoesc.edu.br
-3;Aguinaldo;Timóteo;045.465.465-10;aguinaldotimoteo@unoesc.edu.br
+1;Fernando;Becker;045.465.465-09;f.becker@unoesc.edu.br
+2;diana;ladeira;681.498.090-44;diladeira@unoesc.edu.br
+3;talita;ribeiro;880.532.176.54;talirib@unoesc.edu.br

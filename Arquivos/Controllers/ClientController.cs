@@ -1,35 +1,31 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Arquivos.Data;
 using Arquivos.Models;
 
-namespace Arquivos.Models.Controllers
+namespace Arquivos.Controllers
 {
-    public class ClinicaController
+    public class ClientController
     {
         private string directoryName = "ReportFiles";
-        private string fileName = "Clinicas.txt";
+        private string fileName = "Clients.txt";
 
-        public List<Clinica> List()
+        public List<Client> List()
         {
-            return DataSet.Clinicas;
+            return DataSet.Clients;
         }
         
-        public bool Insert(Clinica clinica)
+        public bool Insert(Client client)
         {
-            if(clinica == null)
+            if(client == null)
                 return false;
 
-            if (clinica.Id <= 0)
+            if (client.Id <= 0)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(clinica.Name))
+            if (string.IsNullOrWhiteSpace(client.FirstName))
                 return false;
 
 
-            DataSet.Clinicas.Add(clinica);
+            DataSet.Clients.Add(client);
             return true;
         }
 
@@ -39,9 +35,9 @@ namespace Arquivos.Models.Controllers
                 Directory.CreateDirectory(directoryName);
             
             string fileContent = string.Empty;
-            foreach(Clinica c in DataSet.Clinicas)
+            foreach(Client c in DataSet.Clients)
             {
-                fileContent += $"{c.Id};{c.Name};{c.CNPJ};{c.Endereco};{c.Telefone}";
+                fileContent += $"{c.Id};{c.FirstName};{c.LastName};{c.CPF};{c.email}";
                 fileContent +="\n";
             }
         
@@ -112,6 +108,22 @@ namespace Arquivos.Models.Controllers
             {
                 var c = DataSet.Clients[i];
                 if( c.FullName.ToLower().Contains(name.ToLower()) )
+                    clients.Add(c);
+            }
+            return clients;
+        }
+
+        public List<Client> SearchByCPF(string CPF)
+        {
+            if (string.IsNullOrEmpty(CPF) || 
+                string.IsNullOrWhiteSpace(CPF) )
+                return null;
+
+            List<Client> clients = new List<Client>();
+            for (int i = 0; i<DataSet.Clients.Count; i++)
+            {
+                var c = DataSet.Clients[i];
+                if( c.CPF.ToLower().Contains(CPF.ToLower()) )
                     clients.Add(c);
             }
             return clients;
